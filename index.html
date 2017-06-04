@@ -6,20 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script type="text/paperscript" canvas="myCanvas">
 
-	//circle exercise
-	//make a grid of circles with different colors
-
-	for(var i = 0; i <= 1000; i += 20) {
-		for(var j = 0; j <= 1000; j += 20) {
-			var r = i%255;
-			var g = j%255;
-			var b = 255;
-			var circle = Path.Circle(new Point(i, j), 10);
-			circle.fillColor = 'rgb(' + r + ', ' + g + ', '  + b + ')';
-			circle.strokeColor = 'grey';
-			circle.strokeWidth = 2;
-		}
+	function onKeyDown(event) {
+		var maxPoint = new Point(view.size.width, view.size.height);
+		var randomPoint = Point.random();
+		var point = maxPoint * randomPoint;
+		new Path.Circle(point, 100).fillColor = "orange";
 	}
+
 
 </script>
 </head>
